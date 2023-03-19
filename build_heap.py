@@ -22,7 +22,7 @@ def build_heap(data):
             swaps.append((node, next_node))
             data[next_node], data[node] = data[node], data[next_node]
             node = next_node
-    print(data)
+
     return swaps
 
 
