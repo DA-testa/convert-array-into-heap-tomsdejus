@@ -1,6 +1,7 @@
 # python3
 
 
+import fileinput
 import sys
 
 
@@ -38,8 +39,7 @@ def main():
     input_type = input()
     data =[]
     if input_type == 'F\r':
-        for line in sys.stdin:
-            print(line)
+        for line in fileinput.input():
             print(line)
             
 
