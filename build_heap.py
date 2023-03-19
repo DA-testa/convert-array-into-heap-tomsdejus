@@ -35,13 +35,13 @@ def main():
     # first two tests are from keyboard, third test is from a file
 
     input_type = input()
-    if input_type == 'F\\r':
+    if input_type == 'F':
         stream = sys.stdin
         while True:
             data = stream.read(1024)
             if len(data) == 0:
                 break #EOF
-    elif input_type == 'I\\r':
+    elif input_type == 'I':
         while True:
             n = int(input())
             if 1 <= n and n <= 100000:
