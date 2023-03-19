@@ -31,14 +31,19 @@ def main():
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
 
+    input_type = input()
+    if input_type == 'F':
+        pass
+    else:
+        while True:
+            n = int(input())
+            if 1 <= n and n <= 100000:
+                break;
+        data = list(map(int, input().split()))
     #1 ≤ 𝑛 ≤ 100 000; 0 ≤ 𝑖, 𝑗 ≤ 𝑛 − 1; 0 ≤ 𝑎0, 𝑎1, . . . , 𝑎𝑛−1 ≤ 109. All 𝑎𝑖 are distinct.
     # input from keyboard
     
-    while True:
-        n = int(input())
-        if 1 <= n and n <= 100000:
-            break;
-    data = list(map(int, input().split()))
+
 
     # checks if lenght of data is the same as the said lenght
 
