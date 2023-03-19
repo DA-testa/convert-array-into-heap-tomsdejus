@@ -2,6 +2,8 @@
 
 
 import fileinput
+import glob
+import os
 import sys
 
 
@@ -39,9 +41,10 @@ def main():
     input_type = input()
     data =[]
     if input_type == 'F\r':
-        for i in sys.stdin:
-            with open(i, 'r') as f:
-                print(f.read())
+        for line in sys.stdin:
+            for infile in glob.glob(os.path.join(line, '*')):
+                review_file = open(infile,'r').read()
+                print(review_file)
 
         for line in fileinput.input():
             print(line)
