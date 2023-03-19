@@ -41,10 +41,12 @@ def main():
     input_type = input()
     data =[]
     if input_type == 'F\r':
-        for line in sys.stdin:
-            for infile in glob.glob(os.path.join(line, '*')):
-                review_file = open(infile,'r').read()
-                print(review_file)
+        file = input()
+        location = './tests/'
+        path = os.path.join(location, file)
+        with open(path, 'r') as file:
+            n = int(file.readline())
+            data = list(map(int, file.readline().split()))
 
         for line in fileinput.input():
             print(line)
