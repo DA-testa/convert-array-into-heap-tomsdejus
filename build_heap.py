@@ -7,13 +7,11 @@ import sys
 def build_heap(data):
     swaps = []
 
-
-    for i in range(int(len(data)/2)):
+    for i in range(len(data) // 2 - 1, -1, -1):
         node = i
         
         while True:
             next_node = node * 2 + 1
-
             if next_node >= len(data):
                 break
             if next_node + 1 < len(data) and data[next_node + 1] < data[next_node]:
@@ -24,7 +22,6 @@ def build_heap(data):
             swaps.append((next_node, node))
             data[next_node], data[node] = data[node], data[next_node]
             node = next_node
-    
     print(data)
     return swaps
 
@@ -45,7 +42,7 @@ def main():
             data = stream.read(1024)
             if len(data) == 0:
                 break #EOF
-    elif input_type == 'I\r':
+    elif input_type == 'I':
         while True:
             n = int(input())
             if 1 <= n and n <= 100000:
