@@ -1,6 +1,9 @@
 # python3
 
 
+import sys
+
+
 def build_heap(data):
     swaps = []
 
@@ -32,9 +35,13 @@ def main():
     # first two tests are from keyboard, third test is from a file
 
     input_type = input()
-    if input_type == 'F':
-        pass
-    else:
+    if input_type == 'F\\r':
+        stream = sys.stdin
+        while True:
+            data = stream.read(1024)
+            if len(data) == 0:
+                break #EOF
+    elif input_type == 'I\\r':
         while True:
             n = int(input())
             if 1 <= n and n <= 100000:
@@ -52,14 +59,16 @@ def main():
     # calls function to assess the data 
     # and give back all swaps
     swaps = build_heap(data)
-    print(swaps)
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
 
 
     # output all swaps
-    for i, j in swaps:
-        print(i, j)
+    if len(swaps == 0):
+        print(0)
+    else:
+        for i, j in swaps:
+            print(i, j)
 
 
 if __name__ == "__main__":
