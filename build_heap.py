@@ -16,15 +16,16 @@ def build_heap(data):
 
             if next_node >= len(data):
                 break
-            if next_node + 1 < len(data) and data[next_node + 1] < data[next_node]:
+            if next_node + 1 < len(data) and data[next_node + 1] > data[next_node]:
                 next_node += 1
-            if data[node] < data[next_node]:
+            if data[node] > data[next_node]:
                 break
 
             swaps.append((next_node, node))
             data[next_node], data[node] = data[node], data[next_node]
             node = next_node
     
+    print(data)
     return swaps
 
 
@@ -38,13 +39,13 @@ def main():
 
     n = -1
     input_type = input()
-    if input_type == 'F\r':
+    if input_type == 'F':
         stream = sys.stdin
         while True:
             data = stream.read(1024)
             if len(data) == 0:
                 break #EOF
-    elif input_type == 'I\r':
+    elif input_type == 'I':
         while True:
             n = int(input())
             if 1 <= n and n <= 100000:
