@@ -38,13 +38,13 @@ def main():
 
     n = -1
     input_type = input()
-    if input_type == 'F':
+    if input_type == 'F\r':
         stream = sys.stdin
         while True:
             data = stream.read(1024)
             if len(data) == 0:
                 break #EOF
-    elif input_type == 'I':
+    elif input_type == 'I\r':
         while True:
             n = int(input())
             if 1 <= n and n <= 100000:
