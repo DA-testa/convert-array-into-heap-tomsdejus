@@ -40,7 +40,7 @@ def main():
 
     input_type = input()
     data =[]
-    if input_type == "F":
+    if input_type == "F\r":
         file = input()
         location = './tests/'
         path = os.path.join(location, file)
@@ -51,7 +51,7 @@ def main():
 
             
 
-    elif input_type == "I":
+    elif input_type == "I\r":
         while True:
             n = int(input())
             if 1 <= n and n <= 100000:
@@ -63,8 +63,6 @@ def main():
 
 
     # checks if lenght of data is the same as the said lenght
-    print(n)
-    print(len(data))
     assert len(data) == n
 
     # calls function to assess the data 
