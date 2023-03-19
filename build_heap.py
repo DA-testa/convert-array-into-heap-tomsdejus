@@ -19,7 +19,7 @@ def build_heap(data):
             if data[node] < data[next_node]:
                 break
 
-            swaps.append((next_node, node))
+            swaps.append((node, next_node))
             data[next_node], data[node] = data[node], data[next_node]
             node = next_node
     print(data)
