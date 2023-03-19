@@ -34,6 +34,7 @@ def main():
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
 
+    n = -1
     input_type = input()
     if input_type == 'F\r':
         stream = sys.stdin
@@ -64,7 +65,7 @@ def main():
 
 
     # output all swaps
-    if len(swaps == 0):
+    if len(swaps) == 0:
         print(0)
     else:
         for i, j in swaps:
