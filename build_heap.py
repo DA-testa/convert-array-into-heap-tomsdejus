@@ -11,12 +11,12 @@ def build_heap(data):
         node = i
         
         while True:
-            next_node = node * 2 + 1
+            next_node = node * 2
             if next_node >= len(data):
                 break
-            if next_node + 1 < len(data) and data[next_node + 1] > data[next_node]:
+            if next_node + 1 < len(data) and data[next_node + 1] < data[next_node]:
                 next_node += 1
-            if data[node] > data[next_node]:
+            if data[node] < data[next_node]:
                 break
 
             swaps.append((next_node, node))
