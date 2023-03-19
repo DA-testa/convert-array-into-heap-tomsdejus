@@ -36,11 +36,12 @@ def main():
 
 
     input_type = input()
+    data =[]
     if input_type == 'F\r':
-        for stream in sys.stdin:
-            read = stream.read(1024)
-            print(read)
+        for line in sys.stdin:
+            print(line)
             
+
     elif input_type == 'I\r':
         while True:
             n = int(input())
