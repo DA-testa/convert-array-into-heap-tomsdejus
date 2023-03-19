@@ -68,6 +68,7 @@ def main():
     if len(swaps) == 0:
         print(0)
     else:
+        print(len(data))
         for i, j in swaps:
             print(i, j)
 
