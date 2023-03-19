@@ -45,17 +45,17 @@ def main():
         location = './tests/'
         path = os.path.join(location, file)
         with open(path, "r") as f:
-            print(f.read().split()[0])
+            n = int(f.readline())
 
-        for line in fileinput.input():
-            print(line)
+            data = list(map(int, f.readline().split()))
+
             
 
     elif input_type == "I":
         while True:
             n = int(input())
             if 1 <= n and n <= 100000:
-                break;
+                break
         data = list(map(int, input().split()))
     #1 ≤ 𝑛 ≤ 100 000; 0 ≤ 𝑖, 𝑗 ≤ 𝑛 − 1; 0 ≤ 𝑎0, 𝑎1, . . . , 𝑎𝑛−1 ≤ 109. All 𝑎𝑖 are distinct.
     # input from keyboard
@@ -63,7 +63,8 @@ def main():
 
 
     # checks if lenght of data is the same as the said lenght
-
+    print(n)
+    print(len(data))
     assert len(data) == n
 
     # calls function to assess the data 
