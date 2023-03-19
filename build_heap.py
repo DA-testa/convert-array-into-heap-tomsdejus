@@ -34,13 +34,15 @@ def main():
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
 
-    n = -1
+
     input_type = input()
     if input_type == 'F\r':
         stream = sys.stdin
         while True:
-            data = stream.read(1024)
-            if len(data) == 0:
+            read = stream.read(1024)
+            print(read)
+
+            if len(read) == 0:
                 break #EOF
     elif input_type == 'I\r':
         while True:
