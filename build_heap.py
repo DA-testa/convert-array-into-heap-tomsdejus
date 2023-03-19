@@ -40,20 +40,18 @@ def main():
 
     input_type = input()
     data =[]
-    if input_type == 'F\r':
+    if input_type == "F":
         file = input()
         location = './tests/'
         path = os.path.join(location, file)
-        with open(path) as f:
-            data = list(map(int, f.readline().split()))
-            n= len(data)
-            print(n)
+        with open(path, "r") as f:
+            print(f.read().split()[0])
 
         for line in fileinput.input():
             print(line)
             
 
-    elif input_type == 'I\r':
+    elif input_type == "I":
         while True:
             n = int(input())
             if 1 <= n and n <= 100000:
