@@ -39,9 +39,10 @@ def main():
     input_type = input()
     data =[]
     if input_type == 'F\r':
+        for i in sys.stdin:
+            with open(i, 'r') as f:
+                print(f.read())
 
-        with open(sys.stdin, 'r') as f:
-            print(f.read())
         for line in fileinput.input():
             print(line)
             
