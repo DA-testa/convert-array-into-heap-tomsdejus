@@ -40,6 +40,7 @@ def main():
     if input_type == 'F\r':
         for line in sys.stdin:
             print(line)
+            print(line)
             
 
     elif input_type == 'I\r':
