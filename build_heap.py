@@ -37,13 +37,10 @@ def main():
 
     input_type = input()
     if input_type == 'F\r':
-        stream = sys.stdin
-        while True:
+        for stream in sys.stdin:
             read = stream.read(1024)
             print(read)
-
-            if len(read) == 0:
-                break #EOF
+            
     elif input_type == 'I\r':
         while True:
             n = int(input())
