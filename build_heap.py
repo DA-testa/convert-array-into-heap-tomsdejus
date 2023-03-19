@@ -16,9 +16,9 @@ def build_heap(data):
 
             if next_node >= len(data):
                 break
-            if next_node + 1 < len(data) and data[next_node + 1] > data[next_node]:
+            if next_node + 1 < len(data) and data[next_node + 1] < data[next_node]:
                 next_node += 1
-            if data[node] > data[next_node]:
+            if data[node] < data[next_node]:
                 break
 
             swaps.append((next_node, node))
