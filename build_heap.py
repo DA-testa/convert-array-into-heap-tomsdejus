@@ -47,7 +47,6 @@ def main():
         with open(path) as f:
             data = list(map(int, f.readline().split()))
             n= len(data)
-            print(data[0])
             print(n)
 
         for line in fileinput.input():
