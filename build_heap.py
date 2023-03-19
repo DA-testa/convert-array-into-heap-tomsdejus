@@ -46,6 +46,7 @@ def main():
         path = os.path.join(location, file)
         with open(path) as f:
             n = int(f.readline().split()[0])
+            print(n)
             data = list(map(int, f.readline().split()))
 
         for line in fileinput.input():
